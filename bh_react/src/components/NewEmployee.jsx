@@ -37,7 +37,7 @@ export function NewEmployee(){
 
     return (
         <form onSubmit={handleSubmit} className="new-item-form">
-            <h2>Add New Employee</h2>
+            <h4>Add New Employee</h4>
           <div className="form-row">
             <table>
                 <tbody>
