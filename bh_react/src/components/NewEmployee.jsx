@@ -27,7 +27,7 @@ export function NewEmployee(){
               setFirstName('');
               setLastName('');
               setDescription('');
-              //window.location.reload();
+              window.location.reload();
            })
            .catch((err) => {
               console.log(err.message);
