@@ -5,7 +5,10 @@ export function EmployeeList(){
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+        var be_Url=window.location.href.replace('-fe-','-be-')+'api/Employee';
+        //var be_Url='https://app-be-bhdemo-dev2.azurewebsites.net/api/Employee';
+
+        fetch(be_Url)
            .then((response) => response.json())
            .then((data) => {
               setEmployees(data);

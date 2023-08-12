@@ -6,9 +6,13 @@ export function NewEmployee(){
     const [description, setDescription] = useState('');
 
     const addEmployee = async (firstName,lastName, description) => {
-        await fetch('https://jsonplaceholder.typicode.com/posts', {
+        var be_Url=window.location.href.replace('-fe-','-be-')+'api/Employee';
+        //var be_Url='https://app-be-bhdemo-dev2.azurewebsites.net/api/Employee';
+
+        await fetch(be_Url, {
            method: 'POST',
            body: JSON.stringify({
+            id:'1',
             firstName: firstName,
             lastName: lastName,
             description: description
@@ -23,7 +27,7 @@ export function NewEmployee(){
               setFirstName('');
               setLastName('');
               setDescription('');
-              window.location.reload();
+              //window.location.reload();
            })
            .catch((err) => {
               console.log(err.message);
